@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Polls{% endblock %}
+
+{% block content %}
+    <h1>Polls</h1>
+    {% for poll in polls %}
+    <p><a href="{{ poll.get_absolute_url }}">{{ poll.name }}</a></p>
+    {% empty %}
+    <h3>There are no polls yet</h3>
+    {% endfor %}
+{% endblock %}

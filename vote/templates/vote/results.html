@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Votes{% endblock %}
+
+{% block content %}
+    <h1>Votes:</h1>
+    {% for key, values in results.items %}
+    <p>{{ key }}</p>
+    {% for value in values.values  %}
+        <p>({{value}})</p>
+    {% endfor %}
+    {% empty %}
+    
+    {% endfor %}
+    <p>{{ total_votes }}</p>
+{% endblock %}
