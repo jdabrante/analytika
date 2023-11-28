@@ -7,8 +7,8 @@
     <form method="post" action="{% url 'vote:vote_choice' poll.id %}">
     {% for choice in poll.choices.all %}
     <p>
-        <input type="radio" id="{{ choice.name }}" name={{ poll.name }} value={{ choice.name }}>
-        <label for="{{ choice.name }}">{{ choice.name }}</label>
+        <input type="radio" id="{{ choice.id }}" name={{ poll.id }} value={{ choice.id }}>
+        <label for="{{ choice.id }}">{{ choice.name }}</label>
     </p>
     {% empty %}
     <p>There are not choices yet</p>
